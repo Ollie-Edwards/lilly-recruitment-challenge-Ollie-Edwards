@@ -1,5 +1,6 @@
 window.onload = function() {
     loadMedicines();
+    setQuarterlyReportData();
 
     const form = document.querySelector('.newmedicineform');
     form.addEventListener('submit', handleFormSubmit);
@@ -137,4 +138,28 @@ async function handleFormSubmit(e){
         console.error(err);
         alert("Error creating medicine");
     }
+}
+
+// Fetch quarterly report data
+function loadQuarterlyReportData(){
+    // Fetch API data
+    return fetch('http://localhost:8000/quartlyReport')
+    .then(response => {
+        if (!response.ok){
+            throw new Error(`responce status: ${response.status}`)
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(data[0]);
+        return data[0];
+    })
+}
+
+async function setQuarterlyReportData(){
+    const title = document.querySelector('.avgprice');
+
+    const avgData = await loadQuarterlyReportData();
+
+    title.textContent = "Average price of all medicines: £" + String(avgData);
 }

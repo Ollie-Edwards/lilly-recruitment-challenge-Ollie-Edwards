@@ -48,6 +48,7 @@ function normaliseMedicine(data){
     return { "price": price, "name": name }
 }
 
+// Handle submission of update medicine form
 async function handleFormSubmit(e){
     // Load data from URL
     const params = new URLSearchParams(window.location.search);
@@ -72,8 +73,9 @@ async function handleFormSubmit(e){
             throw new Error("Failed to update medicine");
         }
 
-        alert("Medicine updated successfully");
         window.location.href = "index.html";
+        alert("Medicine updated successfully");
+        
 
     } catch (err) {
         console.error(err);
