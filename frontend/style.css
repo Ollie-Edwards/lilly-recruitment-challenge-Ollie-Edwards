@@ -32,6 +32,7 @@ body {
 /* ---- Your custom styles below ---- */
 .container { 
     width: 100%;
+    margin-bottom: 50px;
 }
 
 .title{
@@ -101,7 +102,7 @@ table tbody tr:hover {
 
 /* Edit Page */
 
-.form {
+.form, .newmedicineform{
     display: flex;
     flex-direction: column;
     max-width: 600px;

@@ -1,5 +1,8 @@
 window.onload = function() {
     loadMedicines();
+
+    const form = document.querySelector('.newmedicineform');
+    form.addEventListener('submit', handleFormSubmit);
 };
 
 function loadMedicines(){
@@ -99,4 +102,39 @@ async function deleteItem(name){
     });
 
     loadMedicines()
+}
+
+// New Medicine Form
+
+async function handleFormSubmit(e){
+    e.preventDefault();
+    // Get input price
+    const priceInput = document.querySelector('#price');
+    const price = priceInput.value.trim();
+
+    const nameInput = document.querySelector('#name');
+    const name = nameInput.value.trim();
+
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("price", price);
+
+    // Send updated info to backend
+    try {
+        const response = await fetch('http://localhost:8000/create', {
+            method: "POST",
+            body: formData
+        });
+
+        if (!response.ok) {
+            throw new Error("Failed to create medicine");
+        }
+
+        alert("Medicine created successfully");
+        window.location.reload();
+
+    } catch (err) {
+        console.error(err);
+        alert("Error creating medicine");
+    }
 }
