@@ -30,3 +30,77 @@ body {
 }
 
 /* ---- Your custom styles below ---- */
+.container { 
+    width: 100%;
+}
+
+.title{
+    text-align: center;
+}
+
+table {
+    margin: 0 auto 0 auto;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    width: 600px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.error-row{
+    background-color: rgb(255, 179, 179);
+}
+
+table thead tr {
+    background-color: #131186;
+    color: #ffffff;
+    height: 30px;
+    text-align: center;
+}
+
+tbody td,
+tbody th {
+    padding: 12px 24px;
+    text-align: center;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+table tbody tr:last-of-type {
+    border-bottom: 2px solid #131186;
+}
+
+table tbody tr:hover {
+    font-weight: bold;
+    color: #131186;
+    background-color: #d4d3ff;
+}
+
+
+/* tr {
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+  border-left: none;
+  border-right: none;
+}​
+
+thead {
+    background-color: #d8d8d8;
+    border-bottom: 1px solid #d1d5db;
+}
+
+thead th {
+    padding: 12px 24px;
+    font-weight: 600;
+}
+ */

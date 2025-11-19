@@ -1,11 +1,8 @@
 {
     "medicines": [
         {
-            "name": "Elixirium",
-            "price": 5.99
-        },
+            "name": "Elixirium"        },
         {
-            "name": "Cureallium",
             "price": 7.49
         },
         {
