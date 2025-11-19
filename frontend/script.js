@@ -3,6 +3,7 @@ window.onload = function() {
 };
 
 function loadMedicines(){
+    // Fetch API data
     fetch('http://localhost:8000/medicines')
     .then(response => {
         if (!response.ok){
@@ -23,6 +24,7 @@ function loadMedicines(){
 }
 
 function normaliseMedicine(data){
+    // Handle potentially invalid data from API
     if (!data || typeof data !== "object") {
         return {"price": 0, "name": "Unknown" }
     }
@@ -34,8 +36,10 @@ function normaliseMedicine(data){
 }
 
 function renderTable(data){
+    // Delete all existing table rows
     document.querySelectorAll("#medicinesTable tbody tr").forEach(row => row.remove());
 
+    // Add new rows into the table
     data.medicines.forEach((data) => {
         renderTableRow(normaliseMedicine(data))
     })
@@ -48,33 +52,34 @@ function renderTableRow(item) {
     const nameTd = document.createElement('td');
     const priceTd = document.createElement('td');
 
-    const icon1Td = document.createElement('td');
-    const icon2Td = document.createElement('td');
-
+    // Add row error class and tooltip for medicines with unknown names or prices
     if (item.name === "Unknown" || item.price === 0) {
         tr.classList.add("error-row");
         nameTd.title = "Invalid medicine data detected"
         priceTd.title = "Invalid medicine data detected"
     }
 
+    // Add name and price to the table elements 
     nameTd.textContent = item.name;
     priceTd.textContent = "£" + Number(item.price).toFixed(2);
 
-    // --- Delete Icon ---
+    // Delete Icon
     const delIcon = document.createElement('td');
     delIcon.innerHTML = '<span><i class="icon fa-solid fa-trash"></i></span>';
-
-    const editIcon = document.createElement('td');
-    editIcon.innerHTML = '<span><i class="icon fa-solid fa-pen-to-square"></i></span>';
 
     delIcon.addEventListener("click", () => {
         deleteItem(item.name);
     });
 
+    // Edit Icon
+    const editIcon = document.createElement('td');
+    editIcon.innerHTML = '<span><i class="icon fa-solid fa-pen-to-square"></i></span>';
+
     editIcon.addEventListener("click", () => {
         window.location.href = `./edit.html?name=${encodeURIComponent(item.name)}`;
     });
     
+    // Add each item to the table row
     tr.appendChild(nameTd);
     tr.appendChild(priceTd);
     tr.appendChild(delIcon);
@@ -84,6 +89,7 @@ function renderTableRow(item) {
 }
 
 async function deleteItem(name){
+    // Delete medicine by name
     const formData = new FormData();
     formData.append("name", name);
 
