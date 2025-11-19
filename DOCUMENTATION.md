@@ -14,6 +14,8 @@ My approach to this task was to first implement the medicines table to show the 
 
 I am particularly proud of my implementation of the 'Medicine Tracker' table, as I think this effectivly shows the name and price of the medicines, as well as clearly showing if there were any errors with the data using both visual colouring of the table, and a tool tip on hover. It also allows for the user to very easily delete or edit all the medicines in the database.
 
+<img width="786" height="513" alt="image" src="https://github.com/user-attachments/assets/00f1a7f8-8d27-4546-a6dc-c52a5fe5bc42" />
+
 ## Problems Faced
 *Use this space to document and discuss any issues you faced while undertaking this challenge and how you solved them. We recommend doing this proactively as you experience and resolve the issues - make sure you don't forget! (Screenshots are helpful, though not required)*.
 
