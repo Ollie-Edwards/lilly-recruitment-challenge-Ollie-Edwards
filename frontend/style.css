@@ -98,3 +98,13 @@ table tbody tr:hover {
     /* width: 60px; */
     margin: auto auto auto auto;
 }
+
+/* Edit Page */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto 0 auto;
+    gap: 5px;
+}
