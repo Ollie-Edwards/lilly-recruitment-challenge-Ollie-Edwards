@@ -53,6 +53,10 @@ th.name th.price{
     max-width: 300px;
 }
 
+th.iconcolumn{
+    width: 50px;
+}
+
 table thead tr {
     background-color: #131186;
     color: #ffffff;
@@ -88,25 +92,9 @@ table tbody tr:hover {
     background-color: #d4d3ff;
 }
 
+/* For Icon styling */
 
-/* tr {
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
-    border-collapse: collapse;
+.icon{
+    /* width: 60px; */
+    margin: auto auto auto auto;
 }
-
-th, td {
-  border-left: none;
-  border-right: none;
-}​
-
-thead {
-    background-color: #d8d8d8;
-    border-bottom: 1px solid #d1d5db;
-}
-
-thead th {
-    padding: 12px 24px;
-    font-weight: 600;
-}
- */
