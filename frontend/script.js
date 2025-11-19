@@ -48,5 +48,7 @@ function renderTableRow(item) {
     tr.appendChild(nameTd);
     tr.appendChild(priceTd);
 
+    tr.appendChild(priceTd);
+
     tbody.appendChild(tr);
 }

@@ -45,10 +45,12 @@ table {
     font-family: sans-serif;
     width: 600px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+    table-layout: fixed;
 }
 
-.error-row{
-    background-color: rgb(255, 179, 179);
+th.name th.price{
+    max-width: 300px;
 }
 
 table thead tr {
@@ -69,7 +71,11 @@ table tbody tr {
 }
 
 table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+    background-color: #ececec;
+}
+
+.error-row {
+    background-color: rgb(255, 179, 179) !important; 
 }
 
 table tbody tr:last-of-type {
